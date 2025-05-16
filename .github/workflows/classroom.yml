@@ -21,14 +21,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          repository: NoahNieh/oscamp-starry-next
-          ref: "2448dc3784e74c4db3b5ec2158f131b0db19330f"
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: nightly-2025-01-18
           components: rust-src, llvm-tools
           targets: x86_64-unknown-none, riscv64gc-unknown-none-elf, aarch64-unknown-none, aarch64-unknown-none-softfloat, loongarch64-unknown-none
+      - uses: actions/checkout@v4
+        with:
+          repository: NoahNieh/oscamp-starry-next
+          ref: "2448dc3784e74c4db3b5ec2158f131b0db19330f"
       - uses: Swatinem/rust-cache@v2
       - run: cargo install cargo-binutils
       - uses: ./.github/workflows/setup-musl
