@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: NoahNieh/oscamp-starry-next
-          ref: "2448dc3"
+          ref: "2448dc3784e74c4db3b5ec2158f131b0db19330f"
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: nightly-2025-01-18
