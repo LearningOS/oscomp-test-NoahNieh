@@ -30,6 +30,7 @@ jobs:
         with:
           repository: NoahNieh/oscamp-starry-next
           ref: "2448dc3784e74c4db3b5ec2158f131b0db19330f"
+          path: "os"
       - uses: Swatinem/rust-cache@v2
       - run: cargo install cargo-binutils
       - uses: ./.github/workflows/setup-musl
@@ -51,6 +52,7 @@ jobs:
         run: sudo apt-get install -y python3 python3-pip
       - name: build os.bin
         run: |
+          cd os
           touch riscv64_output.txt
           echo 'start---riscv64' > riscv64_output.txt
           touch loongarch64_output.txt
@@ -76,6 +78,8 @@ jobs:
           cat aarch64_output.txt >> output.txt
           cat x86_64_output.txt >> output.txt
           cat output.txt
+          cp output.txt ../
+          cd ..
           
       - name: Download EvaluationScript
         run: |
