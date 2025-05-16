@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          repository: NoahNieh/oscamp-starry-next
+          ref: "2448dc3"
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: nightly-2025-01-18
