@@ -53,6 +53,7 @@ jobs:
       - name: build os.bin
         run: |
           cd os
+          ./scripts/get-deps.sh
           touch riscv64_output.txt
           echo 'start---riscv64' > riscv64_output.txt
           touch loongarch64_output.txt
