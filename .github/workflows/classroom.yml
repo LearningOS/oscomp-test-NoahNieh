@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: NoahNieh/oscamp-starry-next
-          ref: "5cf263ca4c2d7cd01a2fce646d916461dd131c61"
+          ref: "6a7cf5e27feddd5fa78c137058a873c4597f1013"
           path: "os"
       - uses: Swatinem/rust-cache@v2
       - run: cargo install cargo-binutils
